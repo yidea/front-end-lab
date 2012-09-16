@@ -1,5 +1,5 @@
-/* jQuery Console Logger Improvement
- * based on https://github.com/acuppy/jQuery-Console-Logger/blob/master/jquery.log.js
+/* jQuery Console Logger
+ * https://github.com/acuppy/jQuery-Console-Logger/blob/master/jquery.log.js
  * TODO: output value & type for jquery obj, obj,number,boolean, function, array
  *exp: $('div.title').show().log('Title displayed'); $.log(timestamp, "timestamp");
  **/
@@ -68,9 +68,11 @@
             typeofObj = "DOMelementObject";
           }
           else{
-
+            //array / obj
             if(options instanceof Array) {
-               typeofObj = "ARRAY";
+               typeofObj = "Array[" + options.length +"]" ;
+            } else if(options instanceof Object) {  //obj
+              typeofObj = "Object(" +Object.keys(options).length +")";
             }
           }
 
