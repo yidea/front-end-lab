@@ -1,0 +1,19 @@
+/* animation
+e.g.  @include animation(boxPulse,0.7s,false,0.12s,infinite);
+ -------------- */
+@mixin animation (
+  $name: false,
+  $duration: false,
+  $timing_function: false,
+  $delay: false,
+  $iteration_count: false,
+  $direction: false
+) {
+  @if $name            { -webkit-animation-name: $name;                        -moz-animation-name: $name;                          -ms-animation-name: $name; }
+  @if $duration        { -webkit-animation-duration: $duration;                -moz-animation-duration: $duration;                  -ms-animation-duration: $duration; }
+  @if $timing_function { -webkit-animation-timing-function: $timing_function;  -moz-animation-timing-function: $timing_function;    -ms-animation-timing-function: $timing_function; }
+  @if $delay           { -webkit-animation-delay: $delay;                      -moz-animation-delay: $delay;                        -ms-animation-delay: $delay; }
+  @if $iteration_count { -webkit-animation-iteration-count: $iteration_count;  -moz-animation-iteration-count: $iteration_count;    -ms-animation-iteration-count: $iteration_count; }
+  @if $direction       { -webkit-animation-direction: $direction;              -moz-animation-direction: $direction;                -ms-animation-direction: $direction; }
+}
+
